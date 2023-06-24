@@ -1,14 +1,13 @@
- import { useState } from "react";
- const MyAppf=(props)=>{
-    
-    const[value,setvalue]=useState(27);
-    const[namee,setName]=useState(()=>{console.log("Hi")})
+ import React from "react";
+ import { useSelector } from "react-redux";  
+ 
+ const MyAppf=()=>{
+    //Redux
+    const user=useSelector(state=>state.user.value);
     return(
-        <div>
-            <h1>{props.name}</h1>
-            <p>{value}</p>
-            <button onClick={()=>{setvalue(value+1)}}>click me</button>
-        </div>
+        <div>        
+       <h1>{user.name}</h1>
+     </div>
     )
 }
 export default MyAppf;
