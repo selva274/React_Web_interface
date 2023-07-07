@@ -1,12 +1,15 @@
  import React from "react";
  import { useSelector } from "react-redux";  
- 
+ import { useContext } from "react";
+ import { Appcontext } from "./index";
  const MyAppf=()=>{
     //Redux
-    const user=useSelector(state=>state.user.value);
+    const {name,age}=useContext(Appcontext);
+   
     return(
         <div>        
-       <h1>{user.name}</h1>
+       <h1>{name}</h1>
+       <p>{age}</p>
      </div>
     )
 }
